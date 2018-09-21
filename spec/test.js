@@ -1,14 +1,9 @@
-import chai from 'chai';
-import sinon  from 'sinon';
-import sinonChai from 'sinon-chai';
+import hello from '../hello'
+import {expect} from 'chai'
 
-chai.should();
-chai.use(sinonChai);
-
-describe('sinon-chai', function () {
-  it('should call the mocked function', function () {
-    const spy = sinon.spy();
-    spy(123);
-    spy.should.have.been.calledWith(123);
-  });
-});
+describe('mocha', function () {
+    it('should work with ES6 import/export', function () {
+        const words = hello('mocha')
+        expect(words).to.eq('Hello, mocha!')
+    })
+})
