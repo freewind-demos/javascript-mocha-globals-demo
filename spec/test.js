@@ -1,9 +1,8 @@
-import hello from '../hello'
-import {expect} from 'chai'
+const expect = require('chai').expect;
 
 describe('mocha', function () {
-    it('should work with ES6 import/export', function () {
-        const words = hello('mocha')
-        expect(words).to.eq('Hello, mocha!')
-    })
-})
+  it('should find global hello correctly', function () {
+    hello = 'Hello, mocha';
+    expect(hello).to.eq('Hello, mocha')
+  })
+});
